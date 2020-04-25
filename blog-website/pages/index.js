@@ -6,9 +6,10 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>porschebz-blog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="images/favicon.ico" />
       </Head>
       <Button>你好</Button>
+      <div>你是什么鬼</div>
     </div>
   )
 }
