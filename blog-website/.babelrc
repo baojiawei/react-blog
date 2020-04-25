@@ -1,0 +1,24 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    // 可以使用装饰器decorator
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "css": "./public/css",
+          "js": "./public/js",
+          "images": "./public/images"
+        }
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ]
+  ]
+}
