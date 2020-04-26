@@ -6,12 +6,14 @@ export const Header = () => {
   const [animationSiteSubTitle, setAnimationSiteSubTitle] = useState([styles.introSubtitle])
 
   useEffect(() => {
-    const siteTitleStyle = animationSiteTitle
-    siteTitleStyle.push(styles.introFadeIn)
-    const siteSubTitleStyle = animationSiteSubTitle
-    siteSubTitleStyle.push(styles.introFadeIn)
-    setAnimationSiteTitle(siteTitleStyle.join(' '))
-    setAnimationSiteSubTitle(siteSubTitleStyle.join(' '))
+    setTimeout(() => {
+      const siteTitleStyle = animationSiteTitle
+      siteTitleStyle.push(styles.introFadeIn)
+      const siteSubTitleStyle = animationSiteSubTitle
+      siteSubTitleStyle.push(styles.introFadeIn)
+      setAnimationSiteTitle(siteTitleStyle.join(' '))
+      setAnimationSiteSubTitle(siteSubTitleStyle.join(' '))
+    }, 300);
   }, [])
   return (
     <div className={styles.header}>
