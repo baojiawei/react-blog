@@ -15,5 +15,8 @@ module.exports = withLessExcludeAntd({
   },
   lessLoaderOptions: {
     javascriptEnabled: true
+    // modifyVars: {
+    //   '@primary-color': 'red'
+    // }
   }
 })
