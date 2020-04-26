@@ -2,8 +2,8 @@ import { Avatar, Divider } from 'antd'
 import { GithubOutlined, WechatOutlined, CreditCardOutlined } from '@ant-design/icons'
 import styles from './author.module.less'
 
-const Author = ({ globalStyles }) => (
-  <div className={[styles.authorDiv, globalStyles.mainContentLeft].join(' ')}>
+const Author = () => (
+  <div className={styles.authorDiv}>
     <div>
       <Avatar size={100} src="/global/profile.jpg" />
     </div>

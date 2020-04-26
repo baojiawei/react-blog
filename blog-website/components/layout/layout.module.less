@@ -1,0 +1,26 @@
+.mainContent {
+  margin-top: 0.5rem;
+  .mainContentRight {
+    background-color: #fff;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    border-bottom: 1px solid #eee;
+  }
+  .mainContentLeft {
+    background-color: #fff;
+    margin-right: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    border-bottom: 1px solid #eee;
+  }
+  .mainContentRight,
+  .mainContentLeft {
+    opacity: 0;
+    transition: all 1s ease-out 0s;
+    transform: translate(0, 1rem);
+  }
+  .introFadeIn {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
