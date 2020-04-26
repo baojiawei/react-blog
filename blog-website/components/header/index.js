@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './header.module.less'
+import styles from './header.module.less';
 
 export const Header = () => {
   const [animationSiteTitle, setAnimationSiteTitle] = useState([styles.introTitle])

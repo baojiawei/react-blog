@@ -1,4 +1,6 @@
-import { Avatar, Divider, Affix } from 'antd'
+import {
+  Avatar, Divider, Affix, Tag
+} from 'antd'
 import { GithubOutlined, WechatOutlined, CreditCardOutlined } from '@ant-design/icons'
 import styles from './author.module.less'
 
@@ -15,6 +17,11 @@ const Author = () => (
         <GithubOutlined spin className={styles.account} />
         <WechatOutlined spin className={styles.account} />
         <CreditCardOutlined spin className={styles.account} />
+        <Divider>技术栈</Divider>
+        <Tag color="red">Java</Tag>
+        <Tag color="green">Vue</Tag>
+        <Tag color="blue">React</Tag>
+        <Tag color="purple">Nodejs</Tag>
         <Divider />
         <div className={styles.aboutMe}>About me</div>
       </div>
