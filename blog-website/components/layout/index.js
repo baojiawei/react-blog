@@ -43,9 +43,7 @@ export const myLayout = ({
         {showAuthor
           ? (
             <Col className={animationMainContentLeft} xs={0} sm={0} md={7} lg={5} xl={4}>
-              <Affix offsetTop={5}>
-                <Author />
-              </Affix>
+              <Author />
             </Col>
           )
           : ''}
