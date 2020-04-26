@@ -1,18 +1,19 @@
-const withLess = require('@zeit/next-less')
-const withCss = require('@zeit/next-css')
-const withPlugins = require('next-compose-plugins');
+const withLessExcludeAntd = require('./next-less.config.js')
 
-// fix: prevents error when .less files are required by node
+// choose your own modifyVars
+// const modifyVars = require('./utils/modifyVars')
+
 if (typeof require !== 'undefined') {
   require.extensions['.less'] = () => { }
 }
 
-module.exports = withPlugins([withCss, withLess], {
-  lessLoaderOptions: {
-    javascriptEnabled: true
-  },
+module.exports = withLessExcludeAntd({
   cssModules: true,
   cssLoaderOptions: {
-    localIdentName: '[local]___[hash:base64:5]'
+    importLoaders: 1,
+    localIdentName: '[local]___[hash:base64:5]',
+  },
+  lessLoaderOptions: {
+    javascriptEnabled: true
   }
 })

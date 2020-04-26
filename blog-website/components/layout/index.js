@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import MyHeader from 'components/header'
+import MyFooter from 'components/footer'
 
 export const myLayout = ({ children, title }) => (
   <>
@@ -8,9 +10,14 @@ export const myLayout = ({ children, title }) => (
         name="description"
         content="porschebz的博客"
       />
-      <title>{title}</title>
+      <title>
+        Blog-
+        {title}
+      </title>
     </Head>
+    <MyHeader />
     {children}
+    <MyFooter />
   </>
 )
 

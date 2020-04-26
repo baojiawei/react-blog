@@ -1,5 +1,5 @@
-import '../styles/global.css'
-import 'antd/dist/antd.css'
+import '../styles/global.less'
+import 'antd/dist/antd.less'
 
 export const App = ({ Component, pageProps }) => (
   <Component {...pageProps} />
