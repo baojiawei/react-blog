@@ -26,6 +26,7 @@
     "semi": "off",
     "react/jsx-props-no-spreading": ["off"],
     "react/prop-types": ["off"],
-    "comma-dangle": 0
+    "comma-dangle": 0,
+    "react/no-unescaped-entities": 0
   }
 }

@@ -1,4 +1,4 @@
-import 'css/global.scss'
+import '../styles/global.css'
 import 'antd/dist/antd.css'
 
 export const App = ({ Component, pageProps }) => (

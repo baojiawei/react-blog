@@ -7,9 +7,7 @@
       "module-resolver",
       {
         "alias": {
-          "css": "./public/css",
-          "js": "./public/js",
-          "images": "./public/images"
+          "components": "./components"
         }
       }
     ],

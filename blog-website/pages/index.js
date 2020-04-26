@@ -1,15 +1,10 @@
-import Head from 'next/head'
-import { Button } from 'antd'
+import Layout from 'components/layout'
+import BlogHeader from 'components/header'
 
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-        <title>porschebz-blog</title>
-        <link rel="icon" href="images/favicon.ico" />
-      </Head>
-      <Button>你好</Button>
-      <div>你是什么鬼</div>
-    </div>
+    <Layout title="首页">
+      <BlogHeader />
+    </Layout>
   )
 }
