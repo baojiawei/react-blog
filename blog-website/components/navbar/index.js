@@ -1,6 +1,7 @@
 import { Menu } from 'antd'
 import { HomeOutlined, CoffeeOutlined, VideoCameraOutlined } from '@ant-design/icons'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import styles from './navbar.module.less'
 
 
@@ -16,7 +17,7 @@ const MENU_STYLE = {
 export const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState('block')
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    const navScroll = window.addEventListener('scroll', () => {
       const { scrollTop } = document.documentElement
       if (scrollTop >= 500 && showNavbar !== 'none') {
         setShowNavbar('none')
@@ -25,7 +26,7 @@ export const Navbar = () => {
       }
     })
     return () => {
-      window.removeEventListener('scroll')
+      window.removeEventListener('scroll', navScroll)
     }
   }, []);
 
@@ -34,16 +35,28 @@ export const Navbar = () => {
     <div style={{ display: showNavbar }}>
       <Menu mode="horizontal" style={MENU_STYLE}>
         <Menu.Item key="home">
-          <HomeOutlined className={styles.iconStyle} />
-          首页
-        </Menu.Item>
-        <Menu.Item key="video">
-          <CoffeeOutlined className={styles.iconStyle} />
-          生活
+          <Link href="/">
+            <a href className={styles.colorWhite}>
+              <HomeOutlined className={styles.iconStyle} />
+              首页
+            </a>
+          </Link>
         </Menu.Item>
         <Menu.Item key="life">
-          <VideoCameraOutlined className={styles.iconStyle} />
-          关于我
+          <Link href="/life">
+            <a href className={styles.colorWhite}>
+              <CoffeeOutlined className={styles.iconStyle} />
+              生活
+            </a>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="about">
+          <Link href="/about">
+            <a href className={styles.colorWhite}>
+              <VideoCameraOutlined className={styles.iconStyle} />
+              关于我
+            </a>
+          </Link>
         </Menu.Item>
       </Menu>
     </div>
