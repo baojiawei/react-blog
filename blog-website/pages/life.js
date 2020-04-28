@@ -3,7 +3,6 @@ import { useState } from 'react';
 import {
   List
 } from 'antd'
-import styles from 'styles/index.module.less'
 import { FieldTimeOutlined, FileTextOutlined } from '@ant-design/icons'
 
 export default function Home() {
@@ -23,8 +22,8 @@ export default function Home() {
           dataSource={mylist}
           renderItem={(item) => (
             <List.Item>
-              <h2 className={styles.listTitle}>{item.title}</h2>
-              <div className={styles.listIcon}>
+              <h2 className="listTitle">{item.title}</h2>
+              <div className="listIcon">
                 <span>
                   <FieldTimeOutlined />
                   2019-06-28
@@ -34,7 +33,7 @@ export default function Home() {
                   Javascript
                 </span>
               </div>
-              <div className={styles.listContext}>{item.context}</div>
+              <div className="listContext">{item.context}</div>
             </List.Item>
           )}
         />

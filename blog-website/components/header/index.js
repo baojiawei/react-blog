@@ -1,33 +1,26 @@
 import {
   useState, useEffect
 } from 'react';
-import styles from './header.module.less';
+import { CSSTransition } from 'react-transition-group'
+import 'styles/components/header.less';
 
 export const Header = ({ headerImg }) => {
-  const [animationSiteTitle, setAnimationSiteTitle] = useState([styles.introTitle])
-  const [animationSiteSubTitle, setAnimationSiteSubTitle] = useState([styles.introSubtitle])
-  const [bg, setBg] = useState([styles.bgWrapper])
+  const [bg, setBg] = useState(['bgWrapper'])
   useEffect(() => {
     setTimeout(() => {
-      const siteTitleStyle = animationSiteTitle
-      siteTitleStyle.push(styles.introFadeIn)
-      setAnimationSiteTitle(siteTitleStyle.join(' '))
-      const siteSubTitleStyle = animationSiteSubTitle
-      siteSubTitleStyle.push(styles.introFadeIn)
-      setAnimationSiteSubTitle(siteSubTitleStyle.join(' '))
       const bgStyle = bg
       switch (headerImg) {
         case 'homeBg':
-          bgStyle.push(styles.homeBg)
+          bgStyle.push('homeBg')
           break;
         case 'aboutBg':
-          bgStyle.push(styles.aboutBg)
+          bgStyle.push('aboutBg')
           break;
         case 'lifeBg':
-          bgStyle.push(styles.lifeBg)
+          bgStyle.push('lifeBg')
           break;
         case 'articleBg':
-          bgStyle.push(styles.articleBg)
+          bgStyle.push('articleBg')
           break;
         default:
           return
@@ -36,12 +29,18 @@ export const Header = ({ headerImg }) => {
     }, 300);
   }, [])
   return (
-    <div className={styles.header}>
+    <div className="header">
       <div className={bg} />
-      <div className={styles.siteIntro}>
-        <div className={animationSiteTitle}>Porschebz's Studio</div>
-        <div className={animationSiteSubTitle}>it's better to burn out than to fade away</div>
-      </div>
+      <CSSTransition
+        classNames="fade"
+        appear={true}
+        timeout={1000}
+        >
+        <div className="siteIntro">
+          <div className="introTitle">Porschebz's Studio</div>
+          <div className="introSubtitle">it's better to burn out than to fade away</div>
+        </div>
+      </CSSTransition>
     </div>
   )
 }

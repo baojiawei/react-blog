@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {
   List
 } from 'antd'
-import styles from 'styles/index.module.less'
+import { CSSTransition } from 'react-transition-group'
 import { FieldTimeOutlined, FileTextOutlined } from '@ant-design/icons'
 
 export default function Home() {
@@ -17,14 +17,19 @@ export default function Home() {
   )
   return (
     <Layout title="首页" needAuthor={false} headerImg="aboutBg">
-      <div>
+      <CSSTransition
+        classNames="fade"
+        appear={true}
+        in={true}
+        timeout={5000}
+        >
         <List
           itemLayout="vertical"
           dataSource={mylist}
           renderItem={(item) => (
             <List.Item>
-              <h2 className={styles.listTitle}>{item.title}</h2>
-              <div className={styles.listIcon}>
+              <h2 className="listTitle">{item.title}</h2>
+              <div className="listIcon">
                 <span>
                   <FieldTimeOutlined />
                   2019-06-28
@@ -34,11 +39,11 @@ export default function Home() {
                   Javascript
                 </span>
               </div>
-              <div className={styles.listContext}>{item.context}</div>
+              <div className="listContext">{item.context}</div>
             </List.Item>
           )}
         />
-      </div>
+      </CSSTransition>
     </Layout>
   )
 }

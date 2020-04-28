@@ -1,8 +1,7 @@
-import globalStyles from '../styles/global.less'
-import 'antd/dist/antd.less'
+import 'styles/global.less'
 
 export const App = ({ Component, pageProps }) => (
-  <Component {...pageProps} globalStyles={globalStyles} />
+  <Component {...pageProps} />
 )
 
 export default App
