@@ -40,7 +40,7 @@ export const Navbar = () => {
         <Menu.Item key="home">
           <Link href="/">
             <a className="colorWhite">
-              <HomeOutlined spin className="iconStyle" />
+              <HomeOutlined className="iconStyle" />
               首页
             </a>
           </Link>
@@ -48,7 +48,7 @@ export const Navbar = () => {
         <Menu.Item key="life">
           <Link href="/life">
             <a className="colorWhite">
-              <CoffeeOutlined spin className="iconStyle" />
+              <CoffeeOutlined className="iconStyle" />
               生活
             </a>
           </Link>
@@ -56,7 +56,7 @@ export const Navbar = () => {
         <Menu.Item key="about">
           <Link href="/about">
             <a className="colorWhite">
-              <VideoCameraOutlined spin className="iconStyle" />
+              <VideoCameraOutlined className="iconStyle" />
               关于我
             </a>
           </Link>
