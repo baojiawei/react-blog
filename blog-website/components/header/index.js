@@ -1,10 +1,9 @@
 import {
   useState, useEffect
 } from 'react';
-import { CSSTransition } from 'react-transition-group'
 import 'styles/components/header.less';
 
-export const Header = ({ headerImg }) => {
+export const Header = ({ headerImg, headerTitle, headerSubTitle }) => {
   const [bg, setBg] = useState(['bgWrapper'])
   useEffect(() => {
     setTimeout(() => {
@@ -31,16 +30,10 @@ export const Header = ({ headerImg }) => {
   return (
     <div className="header">
       <div className={bg} />
-      <CSSTransition
-        classNames="fade"
-        appear={true}
-        timeout={1000}
-        >
-        <div className="siteIntro">
-          <div className="introTitle">Porschebz's Studio</div>
-          <div className="introSubtitle">it's better to burn out than to fade away</div>
-        </div>
-      </CSSTransition>
+      <div className="siteIntro">
+        <div className="introTitle">{headerTitle}</div>
+        <div className="introSubtitle">{headerSubTitle}</div>
+      </div>
     </div>
   )
 }

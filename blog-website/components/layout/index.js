@@ -8,7 +8,8 @@ import { useState, useEffect } from 'react';
 import 'styles/components/layout.less'
 
 export const myLayout = ({
-  children, title, needAuthor, headerImg
+  children, title, needAuthor, headerImg,
+  headerTitle, headerSubTitle
 }) => {
   const [showAuthor, setShowAuthor] = useState(true)
 
@@ -30,7 +31,7 @@ export const myLayout = ({
         </title>
       </Head>
       <Navbar />
-      <MyHeader headerImg={headerImg} />
+      <MyHeader headerImg={headerImg} headerTitle={headerTitle} headerSubTitle={headerSubTitle}/>
       <Row className="mainContent" type="flex" justify="center">
         {showAuthor
           ? (

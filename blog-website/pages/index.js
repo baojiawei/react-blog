@@ -4,6 +4,7 @@ import {
   List
 } from 'antd'
 import { FieldTimeOutlined, FileTextOutlined } from '@ant-design/icons'
+import Link from 'next/link'
 
 export default function Home() {
   const [mylist, setMylist] = useState(
@@ -19,6 +20,8 @@ export default function Home() {
       title="首页"
       needAuthor
       headerImg="homeBg"
+      headerTitle="Porschebz's Studio"
+      headerSubTitle="it's better to burn out than to fade away"
     >
       <div>
         <List
@@ -26,18 +29,22 @@ export default function Home() {
           dataSource={mylist}
           renderItem={(item) => (
             <List.Item>
-              <h2 className="listTitle">{item.title}</h2>
-              <div className="listIcon">
-                <span>
-                  <FieldTimeOutlined />
-                  2019-06-28
-                </span>
-                <span>
-                  <FileTextOutlined />
-                  Javascript
-                </span>
-              </div>
-              <div className="listContext">{item.context}</div>
+              <Link href="/post">
+                <a>
+                  <h2 className="listTitle">{item.title}</h2>
+                  <div className="listIcon">
+                    <span>
+                      <FieldTimeOutlined />
+                      2019-06-28
+                    </span>
+                    <span>
+                      <FileTextOutlined />
+                      Javascript
+                    </span>
+                  </div>
+                  <div className="listContext">{item.context}</div>
+                </a>
+              </Link>
             </List.Item>
           )}
         />

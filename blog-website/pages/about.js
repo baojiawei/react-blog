@@ -3,7 +3,6 @@ import { useState } from 'react';
 import {
   List
 } from 'antd'
-import { CSSTransition } from 'react-transition-group'
 import { FieldTimeOutlined, FileTextOutlined } from '@ant-design/icons'
 
 export default function Home() {
@@ -17,13 +16,7 @@ export default function Home() {
   )
   return (
     <Layout title="首页" needAuthor={false} headerImg="aboutBg">
-      <CSSTransition
-        classNames="fade"
-        appear={true}
-        in={true}
-        timeout={5000}
-        >
-        <List
+      <List
           itemLayout="vertical"
           dataSource={mylist}
           renderItem={(item) => (
@@ -43,7 +36,6 @@ export default function Home() {
             </List.Item>
           )}
         />
-      </CSSTransition>
     </Layout>
   )
 }
