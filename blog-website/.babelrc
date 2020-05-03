@@ -7,6 +7,7 @@
         "alias": {
           "@": "./",
           "components": "./components/",
+          "utils": "./utils/",
           "styles": "./public/styles"
         }
       }
