@@ -3,6 +3,11 @@ import marked from 'marked'
 import hljs from 'highlight.js'
 import 'highlight.js/scss/monokai-sublime.scss'
 import GeneratorCatalog from 'utils/generatorCatalog'
+import { WechatOutlined } from '@ant-design/icons'
+import {
+  Row,
+  Col
+} from 'antd'
 
 export default function Post() {
   let markdown='# P01:课程介绍和环境搭建\n' +
@@ -110,13 +115,25 @@ export default function Post() {
   return (
     <Layout
       title="博客详情"
-      needAuthor={false}
-      needCatalog
       headerImg="articleBg"
       headerTitle="Porschebz's Studio"
       headerSubTitle="it's better to burn out than to fade away"
     >
-      <div dangerouslySetInnerHTML={{__html:html}} />
+     
+      <Row className="mainContent" type="flex" justify="center">
+        <Col className="mainContentMiddle" xs={24} sm={24} md={16} lg={15} xl={15}>
+          <div dangerouslySetInnerHTML={{__html:html}} />
+        </Col>
+        <Col className="mainContentLeft" xs={0} sm={0} md={7} lg={5} xl={5}>
+          <div className="catalog">
+            <div className="catalog-title">
+              <WechatOutlined />
+              文章目录
+            </div>
+            {generatorCatalog && generatorCatalog.render()}
+          </div>  
+        </Col>
+      </Row>
     </Layout>
   )
 }

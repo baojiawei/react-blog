@@ -1,8 +1,11 @@
 import Layout from 'components/layout'
 import { useState } from 'react';
 import {
+  Row,
+  Col,
   List
 } from 'antd'
+import Author from 'components/author'
 import { FieldTimeOutlined, FileTextOutlined } from '@ant-design/icons'
 import Link from 'next/link'
 
@@ -18,37 +21,42 @@ export default function Home() {
   return (
     <Layout
       title="首页"
-      needAuthor
       headerImg="homeBg"
       headerTitle="Porschebz's Studio"
       headerSubTitle="it's better to burn out than to fade away"
     >
-      <div>
-        <List
-          itemLayout="vertical"
-          dataSource={mylist}
-          renderItem={(item) => (
-            <List.Item>
-              <Link href="/post">
-                <a>
-                  <h2 className="listTitle">{item.title}</h2>
-                  <div className="listIcon">
-                    <span>
-                      <FieldTimeOutlined />
-                      2019-06-28
-                    </span>
-                    <span>
-                      <FileTextOutlined />
-                      Javascript
-                    </span>
-                  </div>
-                  <div className="listContext">{item.context}</div>
-                </a>
-              </Link>
-            </List.Item>
-          )}
-        />
-      </div>
+      <Row className="mainContent" type="flex" justify="center">
+        <Col className="mainContentLeft" xs={0} sm={0} md={7} lg={5} xl={5}>
+          <Author />
+        </Col>
+        <Col className="mainContentMiddle" xs={24} sm={24} md={16} lg={15} xl={15}>
+          <List
+              itemLayout="vertical"
+              dataSource={mylist}
+              renderItem={(item) => (
+                <List.Item>
+                  <Link href="/post">
+                    <a>
+                      <h2 className="listTitle">{item.title}</h2>
+                      <div className="listIcon">
+                        <span>
+                          <FieldTimeOutlined />
+                          2019-06-28
+                        </span>
+                        <span>
+                          <FileTextOutlined />
+                          Javascript
+                        </span>
+                      </div>
+                      <div className="listContext">{item.context}</div>
+                    </a>
+                  </Link>
+                </List.Item>
+              )}
+            />
+        </Col>
+      </Row>
+      
     </Layout>
   )
 }

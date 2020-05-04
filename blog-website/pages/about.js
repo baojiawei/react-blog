@@ -15,7 +15,7 @@ export default function Home() {
     ]
   )
   return (
-    <Layout title="首页" needAuthor={false} headerImg="aboutBg">
+    <Layout title="首页" headerImg="aboutBg">
       <List
           itemLayout="vertical"
           dataSource={mylist}
