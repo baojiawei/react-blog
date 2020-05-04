@@ -15,29 +15,12 @@ export default function Home() {
     ]
   )
   return (
-    <Layout title="首页" headerImg="lifeBg">
-      <div>
-        <List
-          itemLayout="vertical"
-          dataSource={mylist}
-          renderItem={(item) => (
-            <List.Item>
-              <h2 className="listTitle">{item.title}</h2>
-              <div className="listIcon">
-                <span>
-                  <FieldTimeOutlined />
-                  2019-06-28
-                </span>
-                <span>
-                  <FileTextOutlined />
-                  Javascript
-                </span>
-              </div>
-              <div className="listContext">{item.context}</div>
-            </List.Item>
-          )}
-        />
-      </div>
+    <Layout 
+      title="首页" 
+      headerImg="lifeBg"
+      headerTitle="A picture of my life"
+      headerSubTitle="You don't get to choose how you're going to die, or when. You can only decide how you're going to live now.">
+      
     </Layout>
   )
 }

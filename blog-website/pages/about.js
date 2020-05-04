@@ -15,27 +15,12 @@ export default function Home() {
     ]
   )
   return (
-    <Layout title="首页" headerImg="aboutBg">
-      <List
-          itemLayout="vertical"
-          dataSource={mylist}
-          renderItem={(item) => (
-            <List.Item>
-              <h2 className="listTitle">{item.title}</h2>
-              <div className="listIcon">
-                <span>
-                  <FieldTimeOutlined />
-                  2019-06-28
-                </span>
-                <span>
-                  <FileTextOutlined />
-                  Javascript
-                </span>
-              </div>
-              <div className="listContext">{item.context}</div>
-            </List.Item>
-          )}
-        />
+    <Layout 
+      title="首页" 
+      headerImg="aboutBg"
+      headerTitle="About me"
+      headerSubTitle="Man should do what he should do first, and then what he likes to do.">
+      
     </Layout>
   )
 }

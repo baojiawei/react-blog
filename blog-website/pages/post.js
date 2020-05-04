@@ -2,8 +2,9 @@ import Layout from 'components/layout'
 import marked from 'marked'
 import hljs from 'highlight.js'
 import 'highlight.js/scss/monokai-sublime.scss'
+import 'styles/pages/post.less'
 import GeneratorCatalog from 'utils/generatorCatalog'
-import { WechatOutlined } from '@ant-design/icons'
+import { MenuOutlined } from '@ant-design/icons'
 import {
   Row,
   Col
@@ -66,30 +67,7 @@ export default function Post() {
   '### P02-01:课程介绍和环境搭建\n'+
   '### P02-01:课程介绍和环境搭建\n'+
   '### P02-01:课程介绍和环境搭建\n'+
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n'+
-  '***\n\n\n' +
-  '# p03:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '# p04:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '#5 p05:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '# p06:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '# p07:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '``` var a=11; ```'
+  '>> bbbbbbbbb\n'
 
   const renderer = new marked.Renderer()
   const generatorCatalog = new GeneratorCatalog()
@@ -127,7 +105,7 @@ export default function Post() {
         <Col className="mainContentLeft" xs={0} sm={0} md={7} lg={5} xl={5}>
           <div className="catalog">
             <div className="catalog-title">
-              <WechatOutlined />
+              <MenuOutlined />
               文章目录
             </div>
             {generatorCatalog && generatorCatalog.render()}

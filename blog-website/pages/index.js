@@ -3,7 +3,8 @@ import { useState } from 'react';
 import {
   Row,
   Col,
-  List
+  List,
+  Pagination
 } from 'antd'
 import Author from 'components/author'
 import { FieldTimeOutlined, FileTextOutlined } from '@ant-design/icons'
@@ -54,6 +55,9 @@ export default function Home() {
                 </List.Item>
               )}
             />
+            <div className="center">
+              <Pagination defaultCurrent={1} total={50} />
+            </div>
         </Col>
       </Row>
       
